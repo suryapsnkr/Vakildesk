@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Customers</title>
+</head>
+<body>
+    <h1>All Customers</h1>
+    <table>
+        <tr>
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+            <th>Total Spent</th>
+            <th>Order Date</th>
+        </tr>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer.customer.id }}</td>
+            <td>{{ customer.customer.first_name }}</td>
+            <td>${{ customer.total_amount }}</td>
+            <td>{{ customer.order_date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
